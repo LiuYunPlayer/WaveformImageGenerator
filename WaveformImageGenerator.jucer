@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="u3gtkg" name="WaveformImageGenerator" projectType="consoleapp"
+              useAppConfig="0" addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
+  <MAINGROUP id="kyHBqL" name="WaveformImageGenerator">
+    <GROUP id="{642D65C0-1181-3852-BB70-AA721C822A77}" name="Source">
+      <FILE id="c4HvcR" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
+  <EXPORTFORMATS>
+    <VS2022 targetFolder="Builds/VisualStudio2022">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="WaveformImageGenerator"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="WaveformImageGenerator"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_formats" path="../../../JUCE 8.0.0/modules"/>
+        <MODULEPATH id="juce_core" path="../../../JUCE 8.0.0/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../JUCE 8.0.0/modules"/>
+        <MODULEPATH id="juce_events" path="../../../JUCE 8.0.0/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../JUCE 8.0.0/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../../../JUCE 8.0.0/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../JUCE 8.0.0/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../../JUCE 8.0.0/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../../JUCE 8.0.0/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../JUCE 8.0.0/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../../JUCE 8.0.0/modules"/>
+      </MODULEPATHS>
+    </VS2022>
+  </EXPORTFORMATS>
+</JUCERPROJECT>
