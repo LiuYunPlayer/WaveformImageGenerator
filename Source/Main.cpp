@@ -126,14 +126,11 @@ int wmain(int argc, wchar_t* argv[])
     AudioBuffer<float> buffer(reader->numChannels, (int)numSamples);
     reader->read(&buffer, 0, (int)numSamples, startSample, true, true);
 
-    Image image(Image::ARGB, width, height, true);
-    Graphics g(image);
-    g.fillAll(bgColor);
-
     int numChannels = buffer.getNumChannels();
     float channelHeight = (float)height / numChannels;
 
-    g.setColour(fgColor);
+    RectangleList<float> rects;
+    rects.ensureStorageAllocated(width * numChannels);
     for (int ch = 0; ch < numChannels; ++ch) {
         auto* samples = buffer.getReadPointer(ch);
 
@@ -159,10 +156,18 @@ int wmain(int argc, wchar_t* argv[])
             float rectY = jmin(y1, y2);
             float rectH = std::abs(y2 - y1);
 
-            g.drawLine((float)i + 0.5f, y1, (float)i + 0.5f, y2);
+            rects.addWithoutMerging(Rectangle<float>((float)i, rectY, 1.0f, rectH));
         }
     }
 
+    Image image(Image::ARGB, width, height, true);
+    {
+        Graphics g(image);
+        g.fillAll(bgColor);
+        g.setColour(fgColor);
+        g.fillRectList(rects);
+    }
+    
     File output(outputFile);
     if (output.existsAsFile())
         output.deleteFile();
